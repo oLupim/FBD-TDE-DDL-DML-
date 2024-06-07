@@ -19,6 +19,7 @@ create table produtos(
     data_cadastro date not null,
     valor_unitario float not null,
     codigo_cate int not null,
+    nome_cate varchar(30) not null,
     constraint categoria_produtos
     foreign key (codigo_cate) references categoria(codigo)
 );
@@ -28,6 +29,9 @@ create table pede(
     valor_unitario float not null,
     data_pedido date not null,
     codigo_prod int not null,
+    data_cadastro date not null,
+    valor_unit float not null,
+    codigo_cate int not null,
     codigo_forn int not null,
     constraint produtos_pede
     foreign key (codigo_prod) references produtos(codigo)
